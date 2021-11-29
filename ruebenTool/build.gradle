@@ -1,0 +1,36 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.1'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'de.ac.money'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.flywaydb:flyway-core'
+    implementation 'com.tngtech.archunit:archunit-junit5-engine:0.22.0'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'com.tngtech.archunit:archunit-junit5-engine:0.22.0'
+
+    testImplementation 'com.tngtech.archunit:archunit-junit5:0.22.0'
+    testImplementation 'com.tngtech.archunit:archunit-junit4:0.22.0'
+    testImplementation 'com.tngtech.archunit:archunit:0.22.0'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}

@@ -1,0 +1,13 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+'[Persistence] <<..db..>>
+'[Controller] <<..web..>>
+'[Service] <<..service..>>
+'[Domain] <<..domain..>>
+'
+'[Controller] --> [Persistence]
+'[Controller] --> [Service]
+'[Controller] --> [Domain]
+'[Service] --> [Domain]
+@enduml
